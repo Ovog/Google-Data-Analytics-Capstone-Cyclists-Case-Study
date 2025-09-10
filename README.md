@@ -83,7 +83,7 @@ MySQL is used to process and store the data, with help of DBeaver as a GUI tool.
 This was chosen due to the inability of Sheets and Excel to deal with large amounts of data. Google Sheets can handle about 10 Million Cells, which for 13 columns would be aproximately 769 thousand rows. Since Cyclistic data exceeds this amount, I needed another way to process the data. The ideas for software were R, Python or SQL, the latter of which I decided for since I had the most familiarity.
 
 ### Data Combination
-Since handling 12 diferent tables was not going to be much comfortable, the first thing to do was merging all 12 tables into a single one, holding the data for the entire year.
+Since handling 12 diferent tables was not going to be much comfortable, the first thing to do was merging all 12 tables into a single one, holding the data for the entire year. However, I needed a way to ensure each table remains differentiated by month and year, so two aditional colums were made
 This was done with the follow script (here).
 
 ### Data Exploration
