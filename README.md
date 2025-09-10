@@ -1,8 +1,8 @@
-# Google-Data-Analytics-Capstone-Cyclists-Case-Study
+# Google-Data-Analytics-Capstone-Cyclistic-Case-Study
 
 Course: [Google Data Analytics Capstone: Complete a Case Study](https://www.coursera.org/learn/google-data-analytics-capstone) 
 
-This is a Capstone Project on the Google Data Analytics Course in Coursera, where I analyze data for the fictional company Cyclists, to figure out the behaviour of users of the service the company provides.
+This is a Capstone Project on the Google Data Analytics Course in Coursera, where I analyze data for the fictional company Cyclistic, to figure out the behaviour of users of the service the company provides.
 
 ## Introduction
 
@@ -57,13 +57,38 @@ The Data Source can be found at: . I used the data from 07/25 to 08/24, for a to
 
 I will use Cyclistic’s historical trip data to analyze and identify trends from August 2024 to July 2025, which can be downloaded from [divvy_tripdata](https://divvy-tripdata.s3.amazonaws.com/index.html). The data has been made available by Motivate International Inc. under this [license](https://divvybikes.com/data-license-agreement).
 
-This is public data that can be used to explore how different customer types are using Cyclistic bikes. But note that data-privacy issues prohibit from using riders’ personally identifiable information. This means that we won’t be able to connect pass purchases to credit card numbers to determine if casual riders live in the Cyclistic service area or if they have purchased multiple single passes.
+This is public data that can be used to explore how different customer types are using Cyclistic bikes. Data-privacy issues prohibit from using riders’ personally identifiable information. This means that we won’t be able to connect pass purchases to credit card numbers to determine if casual riders live in the Cyclistic service area or if they have purchased multiple single passes.
 
 ### Data Organization
 
+There are 12 files with a naming convention of YYYYMM-divvy-tripdata, identifying the year and month the data was taken. Each file contains 13 columns which are:
 
+-ride_id the id of each member.
+-rideable_type the kind of bycicle the member used for that trip.
+-started_at the time the member started their ride.
+-ended_at the time the member ended their ride.
+-start_station_name the name of the station where the member took off from.
+-start_station_id the id of the station the member took off from.
+-end_station_name the name of the station where the member finished their trip.
+-end_station_id the id of the station where the member finished their trip.
+-start_lat the latitude of the of the starting station.
+-start_lng the longitude of the starting station.
+-end_lat the latitude of the ending station.
+-end_lng the longitude of the ending station.
+-member_casual
 
 ## Process
+
+MySQL is used to process and store the data, with help of DBeaver as a GUI tool.
+This was chosen due to the inability of Sheets and Excel to deal with large amounts of data. Google Sheets can handle about 10 Million Cells, which for 13 columns would be aproximately 769 thousand rows. Since Cyclistic data exceeds this amount, I needed another way to process the data. The ideas for software were R, Python or SQL, the latter of which I decided for since I had the most familiarity.
+
+### Data Combination
+Since handling 12 diferent tables was not going to be much comfortable, the first thing to do was merging all 12 tables into a single one, holding the data for the entire year.
+This was done with the follow script (here).
+
+### Data Exploration
+
+### Data Cleaning
 
 ## Analyze
 
