@@ -14,7 +14,7 @@ The Data Source can be found at: [divvy_tripdata](https://divvy-tripdata.s3.amaz
 
 These were the SQL queries I used:
 
-(01. Data Combining Script.sql)
+[](01. Data Combining Script.sql)
 
 These are the Data Visualizations I made:
 
