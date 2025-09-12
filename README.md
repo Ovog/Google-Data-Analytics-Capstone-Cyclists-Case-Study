@@ -13,11 +13,8 @@ In this case study, I work for a fictional company, Cyclistic, where I perform t
 The Data Source can be found at: [divvy_tripdata](https://divvy-tripdata.s3.amazonaws.com/index.html). I used the data from 07/25 to 08/24, for a total of 12 months.
 
 These were the SQL queries I used:
+
 [01. Data Combining Script](01. Data Combining Script.sql)
-2.
-3.
-4.
-5.
 
 These are the Data Visualizations I made:
 
