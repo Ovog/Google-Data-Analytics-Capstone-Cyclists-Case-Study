@@ -13,7 +13,7 @@ In this case study, I work for a fictional company, Cyclistic, where I perform t
 The Data Source can be found at: [divvy_tripdata](https://divvy-tripdata.s3.amazonaws.com/index.html). I used the data from 07/25 to 08/24, for a total of 12 months.
 
 These were the SQL queries I used:
-1. Data Combining
+[01. Data Combining Script](01. Data Combining Script.sql)
 2.
 3.
 4.
@@ -87,7 +87,6 @@ When importing the dataset for DBeaver, there were some errors since the default
 
 ![alt text](https://i.imgur.com/d0Hik74.jpeg)
 
-
 From here, it can also be observed what data type was loaded from before.
 
 These data types were decided after iterating from the default to a bigger type until the error was no longer present.
@@ -96,7 +95,7 @@ These data types were decided after iterating from the default to a bigger type 
 
 Since handling 12 different tables was not going to be very comfortable, the first thing to do was to merge all 12 tables into a single one, holding the data for the entire year. An initial problem that I thought was there was a need to differentiating them, so that each monthly data could still be viewed, but since the start and end times column holds date and time information, this differentiation is already included.
 
-This was done with the following script (script).
+This was done with the following [Data Combining Script.](01. Data Combining Script.sql)
 
 The end result gave us 5.974.085 rows of raw data!
 
