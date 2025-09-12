@@ -14,7 +14,7 @@ The Data Source can be found at: [divvy_tripdata](https://divvy-tripdata.s3.amaz
 
 These were the SQL queries I used:
 
-[Data Combining Script](01.Data_Combining_Script.sql)
+[01. Data Combining Script](01.Data_Combining_Script.sql)
 
 These are the Data Visualizations I made:
 
@@ -92,7 +92,7 @@ These data types were decided after iterating from the default to a bigger type 
 
 Since handling 12 different tables was not going to be very comfortable, the first thing to do was to merge all 12 tables into a single one, holding the data for the entire year. An initial problem that I thought was there was a need to differentiating them, so that each monthly data could still be viewed, but since the start and end times column holds date and time information, this differentiation is already included.
 
-This was done with the following [Data Combining Script.](01. Data Combining Script.sql)
+This was done with the following [Data Combining Script.](01.Data_Combining_Script.sql)
 
 The end result gave us 5.974.085 rows of raw data!
 
