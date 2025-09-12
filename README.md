@@ -13,10 +13,11 @@ In this case study, I work for a fictional company, Cyclistic, where I perform t
 The Data Source can be found at: [divvy_tripdata](https://divvy-tripdata.s3.amazonaws.com/index.html). I used the data from 07/25 to 08/24, for a total of 12 months.
 
 These were the SQL queries I used:
-1
-2
-3
-4
+1. Data Combining
+2.
+3.
+4.
+5.
 
 These are the Data Visualizations I made:
 
@@ -75,7 +76,7 @@ There are 12 files with a naming convention of YYYYMM-divvy-tripdata, identifyin
 -start_lng the longitude of the starting station.
 -end_lat the latitude of the ending station.
 -end_lng the longitude of the ending station.
--member_casual
+-member_casual the kind of bike the member used on their trip.
 
 ## Process
 
@@ -92,8 +93,12 @@ From here, it can also be observed what data type was loaded from before.
 These data types were decided after iterating from the default to a bigger type until the error was no longer present.
 
 ### Data Combination
-Since handling 12 diferent tables was not going to be much comfortable, the first thing to do was merging all 12 tables into a single one, holding the data for the entire year. An initial problem that I thought was there was a need to differentiating them, so that each monthly data could still be viewed, but since the start and end times column holds date and time information, this differentiation is already included.
-This was done with the following script (here).
+
+Since handling 12 different tables was not going to be very comfortable, the first thing to do was to merge all 12 tables into a single one, holding the data for the entire year. An initial problem that I thought was there was a need to differentiating them, so that each monthly data could still be viewed, but since the start and end times column holds date and time information, this differentiation is already included.
+
+This was done with the following script (script).
+
+The end result gave us 5.974.085 rows of raw data!
 
 ### Data Exploration
 
