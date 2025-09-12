@@ -27,3 +27,4 @@ create table if not exists cyclistic.combined_tripdata as (
 	union all
 	select * from cyclistic.202507_divvy_tripdata
 	);
+
