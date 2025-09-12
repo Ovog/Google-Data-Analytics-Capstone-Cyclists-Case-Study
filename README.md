@@ -65,8 +65,8 @@ There are 12 files with a naming convention of YYYYMM-divvy-tripdata, identifyin
 
 -ride_id the id of each member.
 -rideable_type the kind of bycicle the member used for that trip.
--started_at the time the member started their ride.
--ended_at the time the member ended their ride.
+-started_at the time and date the member started their ride.
+-ended_at the time and date the member ended their ride.
 -start_station_name the name of the station where the member took off from.
 -start_station_id the id of the station the member took off from.
 -end_station_name the name of the station where the member finished their trip.
@@ -82,9 +82,18 @@ There are 12 files with a naming convention of YYYYMM-divvy-tripdata, identifyin
 MySQL is used to process and store the data, with help of DBeaver as a GUI tool.
 This was chosen due to the inability of Sheets and Excel to deal with large amounts of data. Google Sheets can handle about 10 Million Cells, which for 13 columns would be aproximately 769 thousand rows. Since Cyclistic data exceeds this amount, I needed another way to process the data. The ideas for software were R, Python or SQL, the latter of which I decided for since I had the most familiarity.
 
+When importing the dataset for DBeaver, there were some errors since the default data types were too short for some of the columns. Intending to do the analysis and filtering, so as not to leave out any row, I changed the data types to the following:
+
+![alt text](https://i.imgur.com/d0Hik74.jpeg)
+
+
+From here, it can also be observed what data type was loaded from before.
+
+These data types were decided after iterating from the default to a bigger type until the error was no longer present.
+
 ### Data Combination
-Since handling 12 diferent tables was not going to be much comfortable, the first thing to do was merging all 12 tables into a single one, holding the data for the entire year. However, I needed a way to ensure each table remains differentiated by month and year, so two aditional colums were made
-This was done with the follow script (here).
+Since handling 12 diferent tables was not going to be much comfortable, the first thing to do was merging all 12 tables into a single one, holding the data for the entire year. An initial problem that I thought was there was a need to differentiating them, so that each monthly data could still be viewed, but since the start and end times column holds date and time information, this differentiation is already included.
+This was done with the following script (here).
 
 ### Data Exploration
 
