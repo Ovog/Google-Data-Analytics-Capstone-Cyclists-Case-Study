@@ -16,6 +16,8 @@ These were the SQL queries I used:
 
 [01. Data Combining Script](01.Data_Combining_Script.sql)
 
+[02.Data Exploration Script](02.Data_Exploration_Script.sql)
+
 These are the Data Visualizations I made:
 
 ## Background
