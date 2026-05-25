@@ -98,11 +98,13 @@ The end result gave us 5.974.085 rows of raw data!
 
 ### Data Exploration
 
-Before moving on to cleaning the data, I wanted to familiarize myself with some aspects of the data. Since we already know the types of data from the [Process](#Process) section, I moved on to other questions with the follwing [Data Exploration Script.](02.Data_Exploration_Script.sql). The results are as follow:
+Before moving on to cleaning the data, I wanted to familiarize myself with some aspects of the data. Since we already know the types of data from the [Process](#Process) section, I moved on to other questions with the following [Data Exploration Script.](02.Data_Exploration_Script.sql). The results are as follows:
 
 1. Checking for Null values, we  can see from the following table, where our nulls are:
 
-![alt text](https://i.imgur.com/d0Hik74.jpeg)
+![alt text]([https://i.imgur.com/d0Hik74.jpeg](https://imgur.com/a/4JnzK9N)
+
+The other columns are free of Null values!
 
 1.
 
