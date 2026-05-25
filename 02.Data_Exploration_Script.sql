@@ -57,7 +57,7 @@ CROSS JOIN (
 ON 1=1
 HAVING null_count > 0;
 
---Moving on, we check for duplicates now. Using count(distinct) is extemely slow, so we opt to check if there are any duplicates with ride_id directly
+--Moving on, we check for duplicates now. Using count(distinct) is extremely slow, so we opt to check if there are any duplicates with ride_id directly
 
 SELECT ride_id, COUNT(*)
 FROM cyclistic.combined_tripdata
@@ -65,10 +65,57 @@ GROUP BY ride_id
 HAVING COUNT(*) > 1
 LIMIT 10;
 
---- We check if all ride_id are the same lenght with the following
+--- We check if all ride_id are the same length with the following
 
 SELECT 
     CHAR_LENGTH(ride_id) AS text_length, 
     COUNT(*) AS row_count
 FROM cyclistic.combined_tripdata
 GROUP BY CHAR_LENGTH(ride_id);
+
+--We move on to check temporal paradoxes, since we shouldn't have negative times ideally!
+
+SELECT 
+    COUNT(*) AS total_paradox_rows,
+    MIN(TIMEDIFF(ended_at, started_at)) AS worst_negative_duration
+FROM cyclistic.combined_tripdata
+WHERE ended_at < started_at;
+
+--We check Ultra long trips
+
+SELECT 
+    COUNT(*) AS ultra_long_trips,
+    ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM cyclistic.combined_tripdata), 4) AS percentage_of_dataset
+FROM cyclistic.combined_tripdata
+WHERE TIMESTAMPDIFF(HOUR, started_at, ended_at) >= 24;
+
+-- We check how many types of different rideable types there are, they should be 3
+
+SELECT rideable_type, 
+    COUNT(*) 
+    FROM cyclistic.combined_tripdata 
+    GROUP BY rideable_type;
+
+-- We do the same with our member type, they should be 2
+
+SELECT member_casual, 
+    COUNT(*) 
+    FROM cyclistic.combined_tripdata 
+    GROUP BY member_casual;
+
+-- We perform a very brief check on coordinates, just to see if there is a big difference.
+
+SELECT 
+    MIN(start_lat) AS min_lat, 
+    MAX(start_lat) AS max_lat,
+    MIN(start_lng) AS min_lng, 
+    MAX(start_lng) AS max_lng
+FROM cyclistic.combined_tripdata;
+
+-- Finally, we perform a check for hidden Nulls
+
+SELECT 
+    COUNT(CASE WHEN start_station_name = '' THEN 1 END) AS empty_string_starts,
+    COUNT(CASE WHEN start_station_name = 'NULL' THEN 1 END) AS literal_text_nulls,
+    COUNT(CASE WHEN TRIM(start_station_name) = '' THEN 1 END) AS whitespace_only_starts
+FROM cyclistic.combined_tripdata;
