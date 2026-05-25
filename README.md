@@ -18,6 +18,8 @@ These were the SQL queries I used:
 
 [02. Data Exploration Script](02.Data_Exploration_Script.sql)
 
+[03. Data Cleaning Script](03.Data_Cleaning_Script.sql)
+
 These are the Data Visualizations I made:
 
 ## Background
@@ -60,33 +62,33 @@ This is public data that can be used to explore how different customer types are
 
 ### Data Organization
 
-There are 12 files with a naming convention of YYYYMM-divvy-tripdata, identifying the year and month the data was taken. Each file contains 13 columns which are:
+There are 12 files with a naming convention of YYYYMM-divvy-tripdata, identifying the year and month the data was taken. Each file contains 13 columns, which are:
 
--ride_id the id of each member.
+-ride_id: the ID of each member.
 
--rideable_type the kind of bycicle the member used for that trip.
+-rideable_type: the kind of bicycle the member used for that trip.
 
--started_at the time and date the member started their ride.
+-started_at: the time and date the member started their ride.
 
--ended_at the time and date the member ended their ride.
+-ended_at: the time and date the member ended their ride.
 
--start_station_name the name of the station where the member took off from.
+-start_station_name: the name of the station where the member took off from.
 
--start_station_id the id of the station the member took off from.
+-start_station_id: the ID of the station the member took off from.
 
--end_station_name the name of the station where the member finished their trip.
+-end_station_name: the name of the station where the member finished their trip.
 
--end_station_id the id of the station where the member finished their trip.
+-end_station_id: the ID of the station where the member finished their trip.
 
--start_lat the latitude of the of the starting station.
+-start_lat: the latitude of the starting station.
 
--start_lng the longitude of the starting station.
+-start_lng: the longitude of the starting station.
 
--end_lat the latitude of the ending station.
+-end_lat: the latitude of the ending station.
 
--end_lng the longitude of the ending station.
+-end_lng: the longitude of the ending station.
 
--member_casual the kind of bike the member used on their trip.
+-member_casual: the kind of bike the member used on their trip.
 
 ## Process
 
@@ -121,24 +123,50 @@ The other columns are free of Null values!
 
 1. Now we move on, checking for duplicate values with ride_id. Since that catalogs the ID of a single ride, there shouldn't be two of them, which is indeed what happens when we run the given code.
 
-1. Now we study if there is any variation on the lenght of ride_id, finding the following results:
+1. Now we study if there is any variation in the length of ride_id, finding the following results:
 
 ![alt text](https://imgur.com/jerReZ7)
 
-This means that all 5,611,500 ride IDs contains a 16 character string, no possible errors there.
+This means that all 5,611,500 ride IDs contain a 16-character string, no possible errors there.
 
-1.
+1. We move on to check temporal paradoxes. Since ended_at should always be bigger than started_at, if we compare these and find a negative number, there is a problem with that row.
 
-1.
+![alt text](https://imgur.com/i1XEZBG)
 
-1.
+Our findings allow us to see that we have 43 such rows that we need to consider when cleaning up. 
+
+We also check for trips that took more than 24 hours, since such a ride should be a data error. We're only considering 24 hours for convenience, but we know that a 23-hour trip shouldn't be possible either.
+
+https://imgur.com/rGlmyjt
+
+![alt text](https://imgur.com/rGlmyjt)
+
+We see that we have a lot of those extremely long, too.
+
+1. We check the rideable_type and member_casual to check if there are some problems, since we know we have only two types of members and three types of rides.
 
 
+![alt text](https://imgur.com/paWO6xp)
 
 
+![alt text](https://imgur.com/MonuX1s)
+
+Everything seems to be in order with these categories.
+
+1. We perform a check on our coordinates to have a general idea. If they have a big variation, then something would be amiss
+
+![alt text](https://imgur.com/eQx7Vu4)
+
+Since they have a reasonable variation, we can see that the data is good.
+
+1. We check for "hidden" Null values, since some databases could store null values as the empty character "" or as the string NULL.
+
+![alt text](https://imgur.com/gHn1s1V)
+
+Since the first (empty string) and third (trimmed) columns are the same, we can conclude that we have that many rows with empty strings.
 
 ### Data Cleaning
-
+For cleaning
 ## Analyze
 
 ## Share
