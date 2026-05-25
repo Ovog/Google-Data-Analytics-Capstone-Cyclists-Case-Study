@@ -115,7 +115,7 @@ Before moving on to cleaning the data, I wanted to familiarize myself with some 
 
 1. Checking for Null values, we  can see from the following table, where our nulls are:
 
-![alt text](https://imgur.com/a/4JnzK9N.jpeg)
+![alt text](https://imgur.com/yqFJqMc)
 
 The other columns are free of Null values!
 
@@ -123,7 +123,7 @@ The other columns are free of Null values!
 
 1. Now we study if there is any variation on the lenght of ride_id, finding the following results:
 
-![alt text](https://imgur.com/a/bkWN9F6.jpeg)
+![alt text](https://imgur.com/jerReZ7)
 
 This means that all 5,611,500 ride IDs contains a 16 character string, no possible errors there.
 
