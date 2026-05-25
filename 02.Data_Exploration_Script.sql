@@ -65,3 +65,10 @@ GROUP BY ride_id
 HAVING COUNT(*) > 1
 LIMIT 10;
 
+--- We check if all ride_id are the same lenght with the following
+
+SELECT 
+    CHAR_LENGTH(ride_id) AS text_length, 
+    COUNT(*) AS row_count
+FROM cyclistic.combined_tripdata
+GROUP BY CHAR_LENGTH(ride_id);
