@@ -115,17 +115,17 @@ Before moving on to cleaning the data, I wanted to familiarize myself with some 
 
 1. Checking for Null values, we  can see from the following table, where our nulls are:
 
-![alt text]([https://i.imgur.com/d0Hik74.jpeg](https://imgur.com/a/4JnzK9N)
+![alt text](https://imgur.com/a/4JnzK9N)
 
 The other columns are free of Null values!
 
-1. Now we move on, checking for duplicate values with ride_id. Since that catalogs the ID of a single ride, there shouldn't be two of them.
+1. Now we move on, checking for duplicate values with ride_id. Since that catalogs the ID of a single ride, there shouldn't be two of them, which is indeed what happens when we run the given code.
 
+1. Now we study if there is any variation on the lenght of ride_id, finding the following results:
 
+![alt text](https://imgur.com/a/bkWN9F6)
 
-We can see that there are no duplicates here.
-
-1. From DBeaver, we can see that all entires
+This means that all 5,611,500 ride IDs contains a 16 character string, no possible errors there.
 
 1.
 
