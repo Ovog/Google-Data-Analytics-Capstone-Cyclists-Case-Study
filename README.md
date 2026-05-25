@@ -16,7 +16,7 @@ These were the SQL queries I used:
 
 [01. Data Combining Script](01.Data_Combining_Script.sql)
 
-[02.Data Exploration Script](02.Data_Exploration_Script.sql)
+[02. Data Exploration Script](02.Data_Exploration_Script.sql)
 
 These are the Data Visualizations I made:
 
@@ -53,7 +53,6 @@ Figure out marketing strategies to convert casual riders to members from the giv
 ## Prepare
 
 ### Data Source
-The Data Source can be found at: . I used the data from 07/25 to 08/24, for a total of 12 months.
 
 I will use Cyclistic’s historical trip data to analyze and identify trends from August 2024 to July 2025, which can be downloaded from [divvy_tripdata](https://divvy-tripdata.s3.amazonaws.com/index.html). The data has been made available by Motivate International Inc. under this [license](https://divvybikes.com/data-license-agreement).
 
@@ -80,7 +79,7 @@ There are 12 files with a naming convention of YYYYMM-divvy-tripdata, identifyin
 ## Process
 
 MySQL is used to process and store the data, with help of DBeaver as a GUI tool.
-This was chosen due to the inability of Sheets and Excel to deal with large amounts of data. Google Sheets can handle about 10 Million Cells, which for 13 columns would be aproximately 769 thousand rows. Since Cyclistic data exceeds this amount, I needed another way to process the data. The ideas for software were R, Python or SQL, the latter of which I decided for since I had the most familiarity.
+This was chosen due to the inability of Sheets and Excel to deal with large amounts of data. Google Sheets can handle about 10 Million Cells, which for 13 columns would be approximately 769 thousand rows. Since Cyclistic data exceeds this amount, I needed another way to process the data. The ideas for software were R, Python, or SQL, the latter of which I decided on since I had the most familiarity.
 
 When importing the dataset for DBeaver, there were some errors since the default data types were too short for some of the columns. Intending to do the analysis and filtering, so as not to leave out any row, I changed the data types to the following:
 
@@ -108,18 +107,19 @@ Before moving on to cleaning the data, I wanted to familiarize myself with some 
 
 The other columns are free of Null values!
 
-1.
+1. Now we move on, checking for duplicate values with ride_id. Since that catalogs the ID of a single ride, there shouldn't be two of them.
+
+
+
+We can see that there are no duplicates here.
+
+1. From DBeaver, we can see that all entires
 
 1.
 
 1.
 
 1.
-
-1.
-
-
-can move on to more interesting questions we found in our exploration:
 
 
 
