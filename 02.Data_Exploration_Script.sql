@@ -57,5 +57,11 @@ CROSS JOIN (
 ON 1=1
 HAVING null_count > 0;
 
+--Moving on, we check for duplicates now. Being careful since Count(Distinct) also counts nulls, we use one of the columns that contains no null values. One of these is ride_id, which works for our ID, so we do the following count trick, using count(*) for safety.
 
+SELECT 
+    COUNT(*) AS total_rows,
+    COUNT(DISTINCT ride_id) AS unique_rides,
+    COUNT(*) - COUNT(DISTINCT ride_id) AS duplicate_rows
+FROM cyclistic.combined_tripdata;
 
