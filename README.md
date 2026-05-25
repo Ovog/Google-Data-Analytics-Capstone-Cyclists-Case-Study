@@ -63,17 +63,29 @@ This is public data that can be used to explore how different customer types are
 There are 12 files with a naming convention of YYYYMM-divvy-tripdata, identifying the year and month the data was taken. Each file contains 13 columns which are:
 
 -ride_id the id of each member.
+
 -rideable_type the kind of bycicle the member used for that trip.
+
 -started_at the time and date the member started their ride.
+
 -ended_at the time and date the member ended their ride.
+
 -start_station_name the name of the station where the member took off from.
+
 -start_station_id the id of the station the member took off from.
+
 -end_station_name the name of the station where the member finished their trip.
+
 -end_station_id the id of the station where the member finished their trip.
+
 -start_lat the latitude of the of the starting station.
+
 -start_lng the longitude of the starting station.
+
 -end_lat the latitude of the ending station.
+
 -end_lng the longitude of the ending station.
+
 -member_casual the kind of bike the member used on their trip.
 
 ## Process
