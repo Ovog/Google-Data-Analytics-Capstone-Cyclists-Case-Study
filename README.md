@@ -117,7 +117,7 @@ Before moving on to cleaning the data, I wanted to familiarize myself with some 
 
 1. Checking for Null values, we  can see from the following table, where our nulls are:
 
-![alt text](https://imgur.com/yqFJqMc)
+![alt text](https://imgur.com/yqFJqMc.jpeg)
 
 The other columns are free of Null values!
 
@@ -125,43 +125,41 @@ The other columns are free of Null values!
 
 1. Now we study if there is any variation in the length of ride_id, finding the following results:
 
-![alt text](https://imgur.com/jerReZ7)
+![alt text](https://imgur.com/jerReZ7.jpeg)
 
 This means that all 5,611,500 ride IDs contain a 16-character string, no possible errors there.
 
 1. We move on to check temporal paradoxes. Since ended_at should always be bigger than started_at, if we compare these and find a negative number, there is a problem with that row.
 
-![alt text](https://imgur.com/i1XEZBG)
+![alt text](https://imgur.com/i1XEZBG.jpeg)
 
 Our findings allow us to see that we have 43 such rows that we need to consider when cleaning up. 
 
 We also check for trips that took more than 24 hours, since such a ride should be a data error. We're only considering 24 hours for convenience, but we know that a 23-hour trip shouldn't be possible either.
 
-https://imgur.com/rGlmyjt
-
-![alt text](https://imgur.com/rGlmyjt)
+![alt text](https://imgur.com/rGlmyjt.jpeg)
 
 We see that we have a lot of those extremely long, too.
 
 1. We check the rideable_type and member_casual to check if there are some problems, since we know we have only two types of members and three types of rides.
 
 
-![alt text](https://imgur.com/paWO6xp)
+![alt text](https://imgur.com/paWO6xp.jpeg)
 
 
-![alt text](https://imgur.com/MonuX1s)
+![alt text](https://imgur.com/MonuX1s.jpeg)
 
 Everything seems to be in order with these categories.
 
 1. We perform a check on our coordinates to have a general idea. If they have a big variation, then something would be amiss
 
-![alt text](https://imgur.com/eQx7Vu4)
+![alt text](https://imgur.com/eQx7Vu4.jpeg)
 
 Since they have a reasonable variation, we can see that the data is good.
 
 1. We check for "hidden" Null values, since some databases could store null values as the empty character "" or as the string NULL.
 
-![alt text](https://imgur.com/gHn1s1V)
+![alt text](https://imgur.com/gHn1s1V.jpeg)
 
 Since the first (empty string) and third (trimmed) columns are the same, we can conclude that we have that many rows with empty strings.
 
